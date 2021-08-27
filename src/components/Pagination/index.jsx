@@ -3,16 +3,21 @@ import ButtonPage from '../ButtonPage';
 import ArrowLeft from '../../images/arrow-left.jpeg';
 import ArrowRight from '../../images/arrow-right.jpeg';
 import { connect } from 'react-redux';
-import StyledPagination from './style';
+import { StyledPagination, StyledArrowLeft, StyledArrowRight } from './style';
+import { setIntervalPagination } from '../../action';
 
 const Pagination = (props) => {
 
-  const { countries, page } = props;
+  const { countries, page, intervalPagination, setIntervalPagination } = props;
   const numberPages = Math.ceil(countries.length / 10);
   
   const buttonsPage = () => {
   let buttonsPage = [];
-  for (let index = 1; index <= numberPages; index += 1) {
+  for (
+    let index = intervalPagination[0];
+    index <= (numberPages < intervalPagination[1] ? numberPages : intervalPagination[1]);
+    index += 1
+  ) {
     buttonsPage.push(
       <ButtonPage
         key={ index }
@@ -28,28 +33,29 @@ const Pagination = (props) => {
     console.log(countries.length);
     if (countries.length !== 0) {
       component = (
-        <StyledPagination>
-          <button
+        <StyledPagination numberPages={ numberPages }>
+          <StyledArrowLeft
+            className="arrow-pagination"
             onClick={ () => {
-              /* if (startPagination !== 1) {
-                const sumEndPagination = endPagination - 1;
-                setEndPagination(sumEndPagination);
-                const sumStartPagination = startPagination - 1;
-                setStartPagination(sumStartPagination);
-              } */
-            } }  
-          ><img src={ ArrowLeft } alt="arrow left" /></button>
+              if (intervalPagination[0] >= 1) {
+                setIntervalPagination([intervalPagination[0] - 1, intervalPagination[1] - 1]);
+              }
+            } }
+            intervalPagination={ intervalPagination[0] }
+          ><img src={ ArrowLeft } alt="arrow left" />
+          </StyledArrowLeft>
             { buttonsPage() }
-          <button
+          <StyledArrowRight
+            className="arrow-pagination"
             onClick={ () => {
-             /*  if (endPagination <= numberPages) {
-                const sumEndPagination = endPagination + 1;
-                setEndPagination(sumEndPagination);
-                const sumStartPagination = startPagination + 1;
-                setStartPagination(sumStartPagination);
-              }  */
-            } }  
-          ><img src={ ArrowRight } alt="arrow right" /></button>
+              if (intervalPagination[1] < numberPages) {
+                setIntervalPagination([intervalPagination[0] + 1, intervalPagination[1] + 1]);
+              }
+            } }
+            intervalPagination={ intervalPagination[1] } 
+            numberPages={ numberPages }
+          ><img src={ ArrowRight } alt="arrow right" />
+          </StyledArrowRight>
         </StyledPagination>
       );
     }
@@ -62,6 +68,11 @@ const Pagination = (props) => {
 const mapStateToProps = (state) => ({
   countries: state.countries,
   page: state.page,
+  intervalPagination: state.intervalPagination,
 });
 
-export default connect(mapStateToProps)(Pagination);
+const mapDispatchToProps = (dispatch) => ({
+  setIntervalPagination: (intervalPagination) => dispatch(setIntervalPagination(intervalPagination)),
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Pagination);

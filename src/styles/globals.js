@@ -35,6 +35,14 @@ const GlobalStyle = createGlobalStyle`
     background: #6D2080;
     color: rgb(255, 255, 255);
   }
+
+  .arrow-pagination {
+    width: 34px;
+    height: 34px;
+    border: none;
+    background: rgb(255, 255, 255);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
 `;
 
 export default GlobalStyle;

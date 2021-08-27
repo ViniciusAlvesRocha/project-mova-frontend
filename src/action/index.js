@@ -6,6 +6,11 @@ const SET_CONTENT_SELECT = 'SET_CONTENT_SELECT';
 const FILTER_BY = 'FILTER_BY';
 const SELECTED = 'SELECTED';
 const COUNTRIES = 'COUNTRIES';
+const INTERVAL_PAGINATION = 'INTERVAL_PAGINATION';
+
+export const setIntervalPagination = (intervalPagination) => ({
+  type: INTERVAL_PAGINATION, payload: intervalPagination
+});
 
 export const failedRequest = (error) => ({ 
   type: FAILED_REQUEST, payload: error

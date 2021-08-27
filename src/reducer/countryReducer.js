@@ -1,10 +1,9 @@
-// import { bindActionCreators } from "redux";
-
 const FILTER_BY = 'FILTER_BY';
 const COUNTRIES = 'COUNTRIES';
 const SET_PAGE = 'SET_PAGE';
 const SET_CONTENT_SELECT = 'SET_CONTENT_SELECT';
 const SELECTED = 'SELECTED';
+const INTERVAL_PAGINATION = 'INTERVAL_PAGINATION';
 
 const initialState = {
   page: 1,
@@ -12,6 +11,7 @@ const initialState = {
   contentSelect: [],
   selected: '',
   countries: [],
+  intervalPagination: [1, 5],
 };
 
 
@@ -27,6 +27,8 @@ export function countryReducer(state = initialState, action) {
         return { ...state, page: action.payload };
       case COUNTRIES:
         return { ...state, countries: [...action.payload] };
+      case INTERVAL_PAGINATION:
+        return { ...state, intervalPagination: action.payload };
       default:
         return state;
     }
