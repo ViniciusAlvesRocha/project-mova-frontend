@@ -65,7 +65,7 @@ const CountryDetails = (props) => {
             <span>Região: <Link to="/" >{ region }</Link></span>
             <span>Sub-região: { subregion }</span>
             <span>População: { population?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }</span>
-            <span>Linguas: { languages?.map(({ nativeName }) => `${ nativeName }`) }</span>
+            <span>Línguas: { languages?.map(({ nativeName }) => `${ nativeName } `) }</span>
           </div>
         </div>
         <h3 className="heading-neighboring-countries" >Países Vizinhos:</h3>

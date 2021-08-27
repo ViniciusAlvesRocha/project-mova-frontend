@@ -63,7 +63,6 @@ export const contentFilter = (content) => ({
 });
 
 const contentForSelect = (filterBy, countries, dispatch) => {
-  console.log(filterBy);
   let filtered = [];
   if (filterBy === "region") {
     countries.forEach(({ region }) => {
@@ -97,7 +96,12 @@ const contentForSelect = (filterBy, countries, dispatch) => {
       });
     });
   }
-  console.log(filtered);
+
+  if (filterBy === 'callingcode') {
+    filtered = filtered.sort((a, b) => a - b);
+  } else {
+    filtered = filtered.sort();
+  }
   dispatch(setContentSelect(filtered));
 }
 
