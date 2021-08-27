@@ -5,6 +5,10 @@ fornecido pela Mova.
 
 A [Mova](https://mova.vc/) é uma fintech brasileira
 
+## Para acessar o prjeto sem clonar o repositório, acesse:
+
+https://viniciusalvesrocha.github.io/project-mova-frontend/
+
 ## Iniciando o projeto
 
 Depois de baixar o projeto no repositório do GitHub, você pode rodar:
