@@ -3,10 +3,26 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from "./pages/Home";
+import CountryDetails from './pages/CountryDetails';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
+import store from './store';
+import GlobalStyle from './styles/globals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <GlobalStyle />
+     <Provider store={ store }>
+      <BrowserRouter>
+        <App />
+        <Switch>
+          <Route path="/" exact={ true } component={ Home } />
+          <Route path="/country/:code" component={ CountryDetails } />
+        </Switch>
+      </BrowserRouter>
+    </Provider>
+   
   </React.StrictMode>,
   document.getElementById('root')
 );
