@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/project-mova-frontend/static/css/main.6dea0f05.chunk.css",
-    "main.js": "/project-mova-frontend/static/js/main.e8140eff.chunk.js",
-    "main.js.map": "/project-mova-frontend/static/js/main.e8140eff.chunk.js.map",
+    "main.js": "/project-mova-frontend/static/js/main.d041f3a5.chunk.js",
+    "main.js.map": "/project-mova-frontend/static/js/main.d041f3a5.chunk.js.map",
     "runtime-main.js": "/project-mova-frontend/static/js/runtime-main.fef801a1.js",
     "runtime-main.js.map": "/project-mova-frontend/static/js/runtime-main.fef801a1.js.map",
-    "static/js/2.0998bcf1.chunk.js": "/project-mova-frontend/static/js/2.0998bcf1.chunk.js",
-    "static/js/2.0998bcf1.chunk.js.map": "/project-mova-frontend/static/js/2.0998bcf1.chunk.js.map",
+    "static/js/2.591d741d.chunk.js": "/project-mova-frontend/static/js/2.591d741d.chunk.js",
+    "static/js/2.591d741d.chunk.js.map": "/project-mova-frontend/static/js/2.591d741d.chunk.js.map",
     "static/js/3.39fe63ad.chunk.js": "/project-mova-frontend/static/js/3.39fe63ad.chunk.js",
     "static/js/3.39fe63ad.chunk.js.map": "/project-mova-frontend/static/js/3.39fe63ad.chunk.js.map",
     "index.html": "/project-mova-frontend/index.html",
     "static/css/main.6dea0f05.chunk.css.map": "/project-mova-frontend/static/css/main.6dea0f05.chunk.css.map",
-    "static/js/2.0998bcf1.chunk.js.LICENSE.txt": "/project-mova-frontend/static/js/2.0998bcf1.chunk.js.LICENSE.txt"
+    "static/js/2.591d741d.chunk.js.LICENSE.txt": "/project-mova-frontend/static/js/2.591d741d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fef801a1.js",
-    "static/js/2.0998bcf1.chunk.js",
+    "static/js/2.591d741d.chunk.js",
     "static/css/main.6dea0f05.chunk.css",
-    "static/js/main.e8140eff.chunk.js"
+    "static/js/main.d041f3a5.chunk.js"
   ]
 }
