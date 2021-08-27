@@ -30,7 +30,6 @@ const Pagination = (props) => {
 
   const render = () => {
     let component = false;
-    console.log(countries.length);
     if (countries.length !== 0) {
       component = (
         <StyledPagination numberPages={ numberPages }>

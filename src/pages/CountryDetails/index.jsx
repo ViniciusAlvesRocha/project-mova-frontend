@@ -3,7 +3,6 @@ import { useParams } from 'react-router-dom';
 import StyledCountryDetails from './style';
 import { connect } from 'react-redux';
 import Countries from '../../components/Countries';
-import Pagination from '../../components/Pagination';
 import { setCountries, filterBy, handleContentFilter } from '../../action';
 import { Link } from 'react-router-dom';
 
@@ -65,13 +64,12 @@ const CountryDetails = (props) => {
             <span>Capital: { capital }</span>
             <span>Região: <Link to="/" >{ region }</Link></span>
             <span>Sub-região: { subregion }</span>
-            <span>População: { population }</span>
+            <span>População: { population?.toString().replace(/(\d)(?=(\d\d\d)+(?!\d))/g, "$1.") }</span>
             <span>Linguas: { languages?.map(({ nativeName }) => `${ nativeName }`) }</span>
           </div>
         </div>
         <h3 className="heading-neighboring-countries" >Países Vizinhos:</h3>
         <Countries />
-        <Pagination />
       </StyledCountryDetails>
     </>);
 }
